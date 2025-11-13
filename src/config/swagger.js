@@ -7,7 +7,7 @@ const options = {
         info: {
             title: 'API Carambar - Blagues',
             version: '1.0.0',
-            description: 'API REST pour gérer des blagues Carambar. Cette API permet d\'ajouter, de consulter et de récupérer des blagues de manière aléatoire.',
+            description: 'API REST pour gérer des blagues Carambar. Cette API permet d\'ajouter, de consulter, de supprimer et de récupérer des blagues de manière aléatoire.',
             contact: {
                 name: 'Thomas UZAN',
                 email: 'thomasuzanpro@gmail.com'
