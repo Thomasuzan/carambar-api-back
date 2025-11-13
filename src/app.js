@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const { sequelize, testConnection } = require('./config/database');
 const blagueRoutes = require('./routes/blagueRoutes');
+const { swaggerUi, swaggerSpec } = require('./config/swagger');
 
 const app = express();
 
@@ -15,6 +16,10 @@ app.use(express.json()); // pour lire le json dans les réquêtes
 app.get('/', (req, res) => {
     res.json({ message: 'Bienvenue sur l\'API Carambar !'});
 });
+
+// documentation Swagger
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerSpec));
 
 // routes versionnées
 app.use('/api/v1/blagues', blagueRoutes);
