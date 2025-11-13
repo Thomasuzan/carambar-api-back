@@ -7,7 +7,8 @@ const {
     ajouterBlague,
     getToutesLesBlagues,
     getBlagueParId,
-    getBlagueAleatoire
+    getBlagueAleatoire,
+    supprimerBlague
 } = require('../controllers/blagueController');
 
 // la route /random DOIT être AVANT /:id
@@ -165,5 +166,45 @@ router.get('/:id', getBlagueParId);
  *         description: Erreur serveur
  */
 router.post('/', ajouterBlague);
+
+/**
+ * @swagger
+ * /api/v1/blagues/{id}:
+ *   delete:
+ *     summary: Supprime une blague par son ID
+ *     tags: [Blagues]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID de la blague à supprimer
+ *         example: 1
+ *     responses:
+ *       200:
+ *         description: Blague supprimée avec succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Blague 1 supprimée avec succès"
+ *       404:
+ *         description: Blague non trouvée
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Blague non trouvée"
+ *       500:
+ *         description: Erreur serveur
+ */
+router.delete('/:id', supprimerBlague);
 
 module.exports = router;

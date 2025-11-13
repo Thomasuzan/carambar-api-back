@@ -101,10 +101,40 @@ const getBlagueAleatoire = async (req, res) => {
     }
 };
 
+// SUPPRIMER une blague par ID (DELETE)
+const supprimerBlague = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    // Cherche la blague
+    const blague = await Blague.findByPk(id);
+    
+    if (!blague) {
+      return res.status(404).json({ 
+        error: 'Blague non trouvée' 
+      });
+    }
+    
+    // Supprime la blague
+    await blague.destroy();
+    
+    res.status(200).json({ 
+      message: `Blague ${id} supprimée avec succès` 
+    });
+    
+  } catch (error) {
+    res.status(500).json({ 
+      error: 'Erreur lors de la suppression de la blague',
+      details: error.message 
+    });
+  }
+};
+
 // on exporte toutes les fonctions
 module.exports = {
     ajouterBlague,
     getToutesLesBlagues,
     getBlagueParId,
-    getBlagueAleatoire
+    getBlagueAleatoire,
+    supprimerBlague
 };
