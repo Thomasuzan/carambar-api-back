@@ -1,4 +1,5 @@
 const { app, sequelize, testConnection } = require('./src/app');
+const seedBlagues = require('./src/seeds/blagues');
 
 const PORT = process.env.PORT || 3000;
 
@@ -11,6 +12,9 @@ const startServer = async () => {
         // synchronise les modèles avec la bdd (créé les tables si elles n'existent pas)
         await sequelize.sync({ alter: true });
         console.log('Base de données synchronisée');
+
+        await seedBlagues();
+        console.log('---');
 
         // démarre le serveur
         app.listen(PORT, () => {

@@ -31,7 +31,7 @@ npm run dev
 
 ## 🌐 Endpoints API
 
-**Base URL :** `https://mon-api.render.com/api/v1`
+**Base URL :** `https://carambar-api-back.onrender.com/api/v1`
 
 | Méthode | Endpoint | Description |
 |---------|----------|-------------|
@@ -42,11 +42,11 @@ npm run dev
 
 ## 📚 Documentation
 
-Documentation Swagger disponible ici : [Lien Swagger](https://en-cours-de-deploiement.com)
+Documentation Swagger disponible ici : [Lien Swagger](https://carambar-api-back.onrender.com/api-docs/)
 
 ## 🌍 Déploiement
 
-L'API est déployée sur **Render.com** : [Lien de l'API](https://en-cours-de-deploiement.com)
+L'API est déployée sur **Render.com** : [Lien de l'API](https://carambar-api-back.onrender.com/)
 
 ## 📦 Structure du projet
 ```
