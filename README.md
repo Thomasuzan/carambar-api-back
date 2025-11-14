@@ -39,6 +39,7 @@ npm run dev
 | GET | `/blagues` | Récupérer toutes les blagues |
 | GET | `/blagues/:id` | Récupérer une blague par ID |
 | GET | `/blagues/random` | Récupérer une blague aléatoire |
+| DELETE | `/blagues/:id` | Supprimer une blague |
 
 ## 📚 Documentation
 
